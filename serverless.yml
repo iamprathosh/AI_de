@@ -1,0 +1,34 @@
+service: federated-learning-platform
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: ${env:AWS_REGION}
+  environment:
+    GRPC_SERVER_ADDRESS: ${env:GRPC_SERVER_ADDRESS}
+    IPFS_ADDRESS: ${env:IPFS_ADDRESS}
+    ENCRYPTION_KEY: ${env:ENCRYPTION_KEY}
+    JWT_SECRET: ${env:JWT_SECRET}
+    NODE_ADDRESSES: ${env:NODE_ADDRESSES}
+
+functions:
+  startTraining:
+    handler: src/serverless.start_training_task
+    events:
+      - http:
+          path: start-training
+          method: post
+
+  stopTraining:
+    handler: src/serverless.stop_training_task
+    events:
+      - http:
+          path: stop-training
+          method: post
+
+  monitorTraining:
+    handler: src/serverless.monitor_training_task
+    events:
+      - http:
+          path: monitor-training
+          method: get
