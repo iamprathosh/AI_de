@@ -40,6 +40,12 @@ The architecture of the decentralized federated learning platform consists of th
    pip install -r requirements.txt
    ```
 
+4. Set up the frontend interface:
+   ```bash
+   cd src/frontend
+   npm install
+   ```
+
 ## Usage Instructions
 
 ### Starting the Platform
@@ -59,6 +65,12 @@ The architecture of the decentralized federated learning platform consists of th
    serverless deploy
    ```
 
+4. Start the frontend interface:
+   ```bash
+   cd src/frontend
+   npm start
+   ```
+
 ### Participating in Federated Learning
 
 1. Start the gRPC client:
@@ -67,6 +79,8 @@ The architecture of the decentralized federated learning platform consists of th
    ```
 
 2. Follow the prompts to send and receive model updates.
+
+3. Use the frontend interface to join federated learning and view status updates.
 
 ## Contributing
 
@@ -110,9 +124,42 @@ We welcome contributions to the project! Please follow these guidelines when con
 
 5. Follow the prompts to send and receive model updates.
 
+6. Start the frontend interface:
+   ```bash
+   cd src/frontend
+   npm start
+   ```
+
+7. Use the frontend interface to join federated learning and view status updates.
+
 ### Troubleshooting
 
 - If you encounter any issues, please check the logs for error messages.
 - Ensure that all dependencies are installed correctly.
 - Verify that the gRPC server, IPFS daemon, and serverless functions are running properly.
 - If the issue persists, please open an issue on the GitHub repository with detailed information about the problem.
+
+## Frontend Interface
+
+The platform includes a frontend interface for users to join federated learning and view status updates. The frontend interface is implemented using HTML, CSS, and JavaScript.
+
+### Components
+
+- **app.js**: Contains the logic for joining federated learning and communicating with the backend using gRPC.
+- **index.html**: Provides the structure and layout of the frontend interface.
+- **styles.css**: Contains the styling for the frontend interface.
+
+### Usage
+
+1. Start the frontend interface:
+   ```bash
+   cd src/frontend
+   npm start
+   ```
+
+2. Open the frontend interface in your web browser:
+   ```bash
+   http://localhost:3000
+   ```
+
+3. Use the interface to join federated learning and view status updates.
