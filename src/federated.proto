@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package federated;
+
+// The federated learning service definition.
+service FederatedLearning {
+  // Sends a model update to the server.
+  rpc SendModelUpdate (ModelUpdate) returns (ModelUpdateResponse) {}
+
+  // Gets model updates from the server.
+  rpc GetModelUpdates (ModelUpdateRequest) returns (stream ModelUpdate) {}
+}
+
+// The request message containing the model update.
+message ModelUpdate {
+  string model_update = 1;
+}
+
+// The response message containing the status of the model update.
+message ModelUpdateResponse {
+  string status = 1;
+}
+
+// The request message for getting model updates.
+message ModelUpdateRequest {}
